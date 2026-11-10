@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActorDefinition xmlns="http://hl7.org/fhir">
+  <id value="au-pd-actor-requester"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2"/> 
+  </extension>
+  <url value="http://hl7.org.au/fhir/pd/ActorDefinition/au-pd-actor-requester" />
+  <name value="AUPDRequester"/> 
+  <title value="AU PD Requester"/> 
+  <status value="active"/>
+  <description value="The AU PD Requester is a system that creates and initiates a data access request to retrieve pd digital health and administrative information."/> 
+  <type value="system"/> 
+  <documentation value="An AU PD Client, also known as AU PD Requester:&#xa;&#xa;
+- **SHALL** accept resources containing any valid value for *Must Support* elements without error&#xa;&#xa;
+- **SHALL** accept resources containing *Must Support* elements without error&#xa;&#xa;
+How the system processes the resource depends on local requirements that could align with obligation terms such as [reject invalid](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-reject-invalid), [correctly handle](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-handle), [persist](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-persist), [display](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-display), or [ignore](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-ignore).&#xa;&#xa;
+When a *Must Support* element requires additional or stronger obligation, this obligation is specified in the AU PD Requester [obligation extension](https://hl7.org/fhir/extensions/StructureDefinition-obligation.html) on the element definition."/>
+  <capabilities value="http://hl7.org.au/fhir/pd/CapabilityStatement/au-pd-requester"/>
+</ActorDefinition>

@@ -45,7 +45,7 @@ Search based on token for a protocol to be used to connnect to the endpoint.
  
 `GET [base]/Endpoint?connection-type=[system]|[code]`
 
-*Example:* `GET [base]/Endpoint?connection-type=http://hl7.org.au/fhir/CodeSystem/smd-interfaces|http://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010`
+*Example:* `GET [base]/Endpoint?connection-type=http://hl7.org.au/fhir/pd/CodeSystem/smd-interfaces|http://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010`
 
 *Support:* MUST support search by Connection Type.
 
@@ -58,7 +58,7 @@ Search based on token for the type of content supported by the endpoint.
  
 `GET [base]/Endpoint?payload-type=[system]|[code]`
 
-*Example:* `GET [base]/Endpoint?payload-type=http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type|http://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706`
+*Example:* `GET [base]/Endpoint?payload-type=http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type|http://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706`
 
 *Support:* MUST support search by Payload Type.
 
@@ -67,7 +67,7 @@ Search based on token for the type of content supported by the endpoint.
 -----------
 **Search: Receiving Facility Extension Elements (Custom)**
 
-Search based string element content in the au-receivingfacility extension<sup>[1](searchparams.html)</sup>. (namespace-id, universal-id, universal-id-type)
+Search based string element content in the au-receivingfacility extension<sup>[1](http://hl7.org/fhir/search.html#string)</sup>. (namespace-id, universal-id, universal-id-type)
  
 `GET [base]/Endpoint?au-receivingfacility-namespace-id=[string]&au-receivingfacility-universal-id=[string]&au-receivingfacility-universal-id-type=[string]`
 

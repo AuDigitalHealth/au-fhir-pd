@@ -1,70 +1,69 @@
------------
-**Read: Practitioner**
+<table class="list">
+<thead>
+	<tr>
+		<th>Parameter(s)</th>
+		<th>Conformance </th>
+		<th>Type(s)</th>
+		<th>Requirements (when used alone or in combination)</th>
+	</tr>
+</thead>
+<tbody>
+	 <tr>
+				<td>identifier</td>
+				<td><b>SHALL</b></td>
+				<td><code>token</code></td>
+				<td>The requester <b>SHALL</b> provide both the system and code values. The responder <b>SHALL</b> support both. <br/><br/> The requester <b>SHOULD</b> support search using a HPI-I identifier as defined in the profile. The responder <b>SHOULD</b> support search using a HPI-I identifier as defined in the profile.</td>
+	</tr>
+	<tr>
+				<td>_id</td>
+				<td><b>SHOULD</b></td>
+				<td><code>token</code></td>
+				<td></td>
+	</tr>
+	<tr>
+				<td>name</td>
+				<td><b>SHOULD</b></td>
+				<td><code>string</code></td>
+				<td></td>
+	</tr>
+ </tbody>
+</table>
 
-Read identified practitioner resource content.
+#### Mandatory Search Parameters
 
-`GET [base]/Practitioner/[id]`
+The following search parameters **SHALL** be supported:
 
-*Example:* `GET [base]/Practitioner/1234`
+1. **SHALL** support searching using the **[`identifier`](https://hl7.org/fhir/R4/practitioner.html#search)** search parameter:
 
-*Support:* MUST support read Practitioner
+   `GET [base]/Practitioner?identifier=[system|][code]`
 
-*Implementation Notes:*  [(how to read resource)]
+   Example:
 
------------
-**Search: Active Status**
+   1. GET [base]/Practitioner?identifier=http://ns.electronichealth.net.au/id/hi/hpii/1.0\|8003616566719020
 
-Search based on active status of the practitioner record.
+   *Implementation Notes:* Fetches a bundle containing all Practitioner resources matching the identifier ([how to search by token](http://hl7.org/fhir/R4/search.html#token))
 
-`GET [base]/Practitioner?active=[status]`
+#### Optional Search Parameters:
 
-*Example:* `GET [base]/Practitioner?active=true`
+The following search parameters **SHOULD** be supported:
 
-*Support:* MUST support search Practitioner by active status (true \| false).
+1. **SHOULD** support searching using the **[`_id`](https://hl7.org/fhir/R4/practitioner.html#search)** search parameter:
 
-*Implementation Notes:* [(how to search by token)]
+   `GET [base]/Practitioner?_id=[id]`
 
------------
-**Search: Practitioner Name**
+   Example:
 
-Search based on family, given and/or any name.
+   1. GET [base]/Practitioner?_id=5678
 
-`GET [base]/Practitioner?family=[string]`
+   *Implementation Notes:* Fetches a bundle with the requested Practitioner, instead of just the resource itself, and allows for the inclusion of additional search parameters such as _include, _revinclude, or _lastUpdated ([how to search by id of the resource](https://hl7.org/fhir/r4/search.html#id))
 
-`GET [base]/Practitioner?family=[string]&given=[string]`
+1. **SHOULD** support searching for a practitioner based on text name using the **[`name`](https://hl7.org/fhir/R4/practitioner.html#search)** search parameter:
 
-`GET [base]/Practitioner?name=[string]`
+   `GET [base]/Practitioner?name=[string]`
 
-*Example:* 
+   Example:
 
-`GET [base]/Practitioner?family=Smith`
+   1. GET [base]/Practitioner?name=Sandyson
 
-`GET [base]/Practitioner?family=Smith&practitioner.given=John`
+   *Implementation Notes:* Fetches a bundle of all Practitioner resources matching the name ([how to search by string](http://hl7.org/fhir/R4/search.html#string))
 
-`GET [base]/Practitioner?name=Smith`
-
-*Support:* SHOULD support search by family, given and name.
-
-*Implementation Notes:*  [(how to search by string)]
-
------------
-**Search: HPI-I**
-
-Search based on identifier token.
- 
-`GET [base]/Practitioner?identifier=[system]|[value]`
-
-*Example:* `GET [base]/Practitioner?identifier=http://ns.electronichealth.net.au/id/hi/hpii/1.0|8003610833334085`
-
-*Support:* SHOULD support search by HPI-I.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-
- [(how to search by reference)]: http://hl7.org/fhir/search.html#reference
- [(how to search by token)]: http://hl7.org/fhir/search.html#token
- [(how to search by date)]: http://hl7.org/fhir/search.html#date
- [(how to search by string)]: http://hl7.org/fhir/search.html#string
- [(how to search by quantity)]: http://hl7.org/fhir/search.html#quantity
- [(how to read resource)]: http://hl7.org/fhir/http.html#read

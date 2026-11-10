@@ -42,13 +42,13 @@
                             <b>providedBy</b>:
                             <a href="Organization-example0.html">Generated Summary: id: example0; HPI-O = 8003627500000328; active; 
                     
-                                <span title="Codes: {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8401}">Hospitals (except Psychiatric Hospitals)</span>,
+                                <span title="Codes: {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8401}">Hospitals (Except Psychiatric Hospitals)</span>,
                                 <span title="Codes: {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8401-15}">Public acute care Hospital</span>; name: Downunder Hospital; helen.mayo@downunderhospital.com.au(WORK)
                             </a>
                         </p>
                         <p>
-                            <b>category</b>: Hospitals (except Psychiatric Hospitals)
-                            <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401' = 'Hospitals (except Psychiatric Hospitals)', given as 'Hospitals (except Psychiatric Hospitals)'})</span>
+                            <b>category</b>: Hospitals (Except Psychiatric Hospitals)
+                            <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401' = 'Hospitals (Except Psychiatric Hospitals)', given as 'Hospitals (Except Psychiatric Hospitals)'})</span>
                         </p>
                         <p>
                             <b>type</b>: Accident and Emergency service
@@ -87,7 +87,7 @@
                     <coding>
                         <system value="http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0" />
                         <code value="8401" />
-                        <display value="Hospitals (except Psychiatric Hospitals)" />
+                        <display value="Hospitals (Except Psychiatric Hospitals)" />
                     </coding>
                 </category>
                 <specialty>
@@ -159,7 +159,7 @@
                 </extension>
                 <status value="active" />
                 <connectionType>
-                    <system value="http://hl7.org.au/fhir/CodeSystem/smd-interfaces" />
+                    <system value="http://hl7.org.au/fhir/pd/CodeSystem/smd-interfaces" />
                     <code value="http://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010" />
                 </connectionType>
                 <name value="Medical Objects Test Secure Messaging Endpoint" />
@@ -176,11 +176,11 @@
                 </period>
                 <payloadType>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.electronichealth.net.au/ds/sc/deliver/hl7Mdm/2012" />
                     </coding>
                 </payloadType>
@@ -270,8 +270,8 @@
                             <b>active</b>: true
                         </p>
                         <p>
-                            <b>type</b>: Hospitals (except Psychiatric Hospitals)
-                            <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401' = 'Hospitals (except Psychiatric Hospitals)', given as 'Hospitals (except Psychiatric Hospitals)'})</span>, Public acute care Hospital
+                            <b>type</b>: Hospitals (Except Psychiatric Hospitals)
+                            <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401' = 'Hospitals (Except Psychiatric Hospitals)', given as 'Hospitals (Except Psychiatric Hospitals)'})</span>, Public acute care Hospital
                             <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401-15' = 'Public acute care Hospital', given as 'Public acute care Hospital'})</span>
                         </p>
                         <p>
@@ -302,7 +302,7 @@
                     <coding>
                         <system value="http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0" />
                         <code value="8401" />
-                        <display value="Hospitals (except Psychiatric Hospitals)" />
+                        <display value="Hospitals (Except Psychiatric Hospitals)" />
                     </coding>
                 </type>
                 <type>

@@ -1,285 +1,121 @@
 
------------
-**Read: PractitionerRole**
+<table class="list">
+<thead>
+	<tr>
+		<th>Parameter(s)</th>
+		<th>Conformance </th>
+		<th>Type(s)</th>
+		<th>Requirements (when used alone or in combination)</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+				<td>identifier</td>
+				<td><b>SHALL</b></td>
+				<td><code>token</code></td>
+				<td>The requester <b>SHALL</b> provide both the system and code values. The responder <b>SHALL</b> support both. <br/><br/>The requester <b>SHOULD</b> support search using a Medicare Provider Number identifier as defined in the profile. The responder <b>SHOULD</b> support search using a Medicare Provider Number identifier as defined in the profile.</td>
+	</tr>
+	 <tr>
+				<td>practitioner</td>
+				<td><b>SHALL</b></td>
+				<td><code>reference</code></td>
+				<td>The requester <b>SHALL</b> provide at least an id value and <b>MAY</b> provide both the Type and id values. The responder <b>SHALL</b> support both.<br/><br/>The requester <b>SHOULD</b> support chained search practitioner.identifier using a HPI-I identifier as defined in the AU Core Practitioner profile. The responder <b>SHOULD</b> support chained search practitioner.identifier using a HPI-I identifier as defined in the AU Core Practitioner profile.</td>
+	</tr>
+	<tr>
+				<td>_id</td>
+				<td><b>SHOULD</b></td>
+				<td><code>token</code></td>
+				<td></td>
+	</tr>
+	<tr>
+				<td>specialty</td>
+				<td><b>SHOULD</b></td>
+				<td><code>token</code></td>
+				<td>The requester <b>SHALL</b> provide at least a code value and <b>MAY</b> provide both the system and code values. The responder <b>SHALL</b> support both.</td>
+	</tr>
+	<tr>
+				<td>role</td>
+				<td><b>SHOULD</b></td>
+				<td><code>token</code></td>
+				<td>The requester <b>SHALL</b> provide at least a code value and <b>MAY</b> provide both the system and code values. The responder <b>SHALL</b> support both.</td>
+	</tr>
+	<tr>
+				<td>organization</td>
+				<td><b>MAY</b></td>
+				<td><code>reference</code></td>
+				<td>The requester <b>SHALL</b> provide at least an id value and <b>MAY</b> provide both the Type and id values. The responder <b>SHALL</b> support both.</td>
+	</tr>
+ </tbody>
+</table>
 
-Read identified practitioner role resource content.
+#### Mandatory Search Parameters
 
-`GET [base]/PractitionerRole/[id]`
+The following search parameters **SHALL** be supported:
 
-*Example:* `GET [base]/PractitionerRole/1234`
+1. **SHALL** support searching using the **[`identifier`](https://hl7.org/fhir/R4/practitionerrole.html#search)** search parameter:
+   - **SHOULD** support these **[`_include`](http://hl7.org/fhir/R4/search.html#include)** parameters: `PractitionerRole:practitioner`
 
-*Support:*
+   `GET [base]/PractitionerRole?identifier=[system|][code]`
 
-* MUST support read PractitionerRole
+   Example:
 
-*Implementation Notes:*  [[(how to read resource)]
+   1. GET [base]/PractitionerRole?identifier=http://ns.electronichealth.net.au/id/medicare-provider-number\|2426621B&amp;_include=PractitionerRole:practitioner
+   1. GET [base]/PractitionerRole?identifier=http://ns.electronichealth.net.au/id/medicare-provider-number\|2426621B
 
------------
-**Search: Active Status**
+   *Implementation Notes:* Fetches a bundle containing all PractitionerRole resources matching the identifier ([how to search by token](http://hl7.org/fhir/R4/search.html#token))
 
-Search based on active status of the practitioner role record.
+1. **SHALL** support searching using the **[`practitioner`](https://hl7.org/fhir/R4/practitionerrole.html#search)** search parameter:
+   - **SHOULD** support chained searching of practitioner canonical identifier `practitioner.identifier` (e.g. `practitioner.identifier=[system|][code]`)
+   - **SHOULD** support these **[`_include`](http://hl7.org/fhir/R4/search.html#include)** parameters: `PractitionerRole:practitioner`
 
-`GET [base]/PractitionerRole?active=[status]`
+   `GET [base]/PractitionerRole?practitioner={Type/}[id]`
+   or optionally `GET [base]/PractitionerRole?practitioner.identifier=[system|][code]`
 
-*Example:* `GET [base]/PractitionerRole?active=true`
+   Example:
 
-*Support:* MUST support search PractitionerRole by active status (true \| false).
+   1. GET [base]/PractitionerRole?practitioner=Practitioner/sandyson-sandy
+   1. GET [base]/PractitionerRole?practitioner=Practitioner/sandyson-sandy&amp;_include=PractitionerRole:practitioner
+   1. GET [base]/PractitionerRole?practitioner.identifier=http://ns.electronichealth.net.au/id/hi/hpii/1.0\|8003616566719020
 
-*Implementation Notes:* [(how to search by token)]
+   *Implementation Notes:* Fetches a bundle of all PractitionerRole resources matching the specified practitioner ([how to search by reference](http://hl7.org/fhir/R4/search.html#reference) and [how to search by token](http://hl7.org/fhir/R4/search.html#token))
 
------------
-**Search: Provider Practitioner Name**
+#### Optional Search Parameters
 
-Chained search (via Practitioner) based on family, given and/or any name.
-Chained search (via Practitioner) based on family, given and/or any name.
+The following search parameters and search parameter combinations **SHOULD** be supported:
 
-`GET [base]/PractitionerRole?practitioner.family=[string]`
+1. **SHOULD** support searching using the **[`_id`](https://hl7.org/fhir/R4/practitionerrole.html#search)** search parameter:
+   - **SHOULD** support these **[`_include`](http://hl7.org/fhir/R4/search.html#include)** parameters: `PractitionerRole:practitioner`
 
-`GET [base]/PractitionerRole?practitioner.family=[string]&practitioner.given=[string]`
+   `GET [base]/PractitionerRole?_id=[id]`
 
-`GET [base]/PractitionerRole?practitioner.name=[string]`
+   Example:
 
-*Example:* 
+   1. GET [base]/PractitionerRole?_id=5678
+   1. GET [base]/PractitionerRole?_id=5678&amp;_include=PractitionerRole:practitioner
 
-`GET [base]/PractitionerRole?practitioner.family=Smith`
+   *Implementation Notes:* Fetches a bundle with the requested PractitionerRole, instead of just the resource itself, and allows for the inclusion of additional search parameters such as _include, _revinclude, or _lastUpdated ([how to search by id of the resource](https://hl7.org/fhir/r4/search.html#id))
 
-`GET [base]/PractitionerRole?practitioner.family=Smith&practitioner.given=John`
+1. **SHOULD** support searching using the **[`specialty`](https://hl7.org/fhir/R4/practitionerrole.html#search)** search parameter:
+   - **SHOULD** support these **[`_include`](http://hl7.org/fhir/R4/search.html#include)** parameters: `PractitionerRole:practitioner`
 
-`GET [base]/PractitionerRole?practitioner.name=Smith`
+   `GET [base]/PractitionerRole?specialty={system|}[code]`
 
-*Support:*
+   Example:
 
-* MUST support search by Practitioner family, given and name.
-* MUST support basic **param=[string]** search which is case and accent-insensitive search;  field equals or starts with the string value.
+   1. GET [base]/PractitionerRole?specialty=http://snomed.info/sct\|408443003
+   1. GET [base]/PractitionerRole?specialty=http://snomed.info/sct\|408443003&amp;_include=PractitionerRole:practitioner
 
-*Implementation Notes:*  [(how to search by string)]
+   *Implementation Notes:* Fetches a bundle of all PractitionerRole resources for the specified specialty ([how to search by token](http://hl7.org/fhir/R4/search.html#token))
 
------------
-**Search: Provider Role**
+1. **SHOULD** support searching using the **[`role`](https://hl7.org/fhir/R4/practitionerrole.html#search)** search parameter:
+   - **SHOULD** support these **[`_include`](http://hl7.org/fhir/R4/search.html#include)** parameters: `PractitionerRole:practitioner`
 
-Search based on role.
+   `GET [base]/PractitionerRole?role={system|}[code]`
 
-`GET [base]/PractitionerRole?role=[system]|[code]`
+   Example:
 
-*Example:* `GET [base]/PractitionerRole?role=http://snomed.info/sct|397897005`
+   1. GET [base]/PractitionerRole?role=http://snomed.info/sct\|304292004
+   1. GET [base]/PractitionerRole?role=http://snomed.info/sct\|304292004&amp;_include=PractitionerRole:practitioner
 
-*Support:*
+   *Implementation Notes:* Fetches a bundle of all PractitionerRole resources for the specified role ([how to search by token](http://hl7.org/fhir/R4/search.html#token))
 
-* MUST support search PractitionerRole by role.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-**Search: Provider at a HealthcareService**
-
-Search based on role.
-
-`GET [base]/PractitionerRole?service=[id]`
-
-*Example:* `GET [base]/PractitionerRole?service=1234`
-
-*Support:*
-
-* MUST support search PractitionerRole by service.
-
-*Implementation Notes:* [(how to search by reference)]
-
------------
-**Search: Provider Specialty**
-
-Search based on specialty code.
-
-`GET [base]/PractitionerRole?specialty=[system]|[code]`
-
-*Example:* `GET [base]/PractitionerRole?specialty=http://snomed.info/sct|722165004`
-
-*Support:*
-
-* MUST support search PractitionerRole by specialty.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-**Search: Organisation of Provider HPI-O**
-
-Chained search (via Organisation) based on identifier token.
-
-`GET [base]/PractitionerRole?organization.identifier=[system]|[value]`
-
-*Example:* `GET [base]/PractitionerRole?organization.identifier=http://ns.electronichealth.net.au/id/hi/hpio/1.0|8003627500000328`
-
-*Support:*
-
-* MUST support search by HPI-O.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-**Search: Provider Practitioner HPI-I**
-
-Chained search (via Practitioner) based on identifier token.
- 
-`GET [base]/PractitionerRole?practitioner.identifier=[system]|[value]`
-
-*Example:* `GET [base]/PractitionerRole?practitioner.identifier=http://ns.electronichealth.net.au/id/hi/hpii/1.0|8003610833334085`
-
-*Support:*
-
-* MUST support search PractitionerRole by HPI-I.
-
-*Implementation Notes:* [(how to search by token)]
-
-
------------
-**Search: Vendor Directory Identifier**
-
-Search based on identifier.
-
-`GET [base]/PractitionerRole?identifier=[system]|[value]`
-
-*Example:* `GET [base]/PractitionerRole?identifier=http://smvendor.com.au/id/provider-id|4412365432`
-
-*Support:*
-
-* MUST support search PractitionerRole by vendor directory identifier; [system] url will be defined by vendors. Effectively this is a general search for identifier capability.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-**Search: Provider Number**
-
-Search based on identifier.
-
-`GET [base]/PractitionerRole?identifier=[system]|[value]`
-
-*Example:* `GET [base]/PractitionerRole?identifier=http://ns.electronichealth.net.au/id/medicare-provider-number|2426621B`
-
-*Support:*
-
-* MUST support search PractitionerRole by Provider Number.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-**Search: National Provider at Organisation Identifier**
-
-Search based on identifier.
-
-`GET [base]/PractitionerRole?identifier=[system]|[value]`
-
-*Example:* `GET [base]/PractitionerRole?identifier=http://ns.electronichealth.net.au/id/npio|8003610833334085@8003627500000328`
-
-*Support:*
-
-* MUST support search PractitionerRole by National Provider at Organisation Identifier.
-
-*Implementation Notes:* [(how to search by token)]
-
-* Note NPIO format is [HPI-I]@[HPI-O].
-
------------
-**Search: Location Address Parts**
-
-Chained search (via Location) based on address parts for postcode, suburb, and state.
-
-`GET [base]/PractitionerRole?location.address-postalcode=[postcode]`
-
-`GET [base]/PractitionerRole?location.address-postalcode=[postcode],[postcode]`
-
-`GET [base]/PractitionerRole?location.address-postalcode=[postcode],[postcode],[postcode]` etc.
-
-`GET [base]/PractitionerRole?location.address-city=[suburb]`
-
-`GET [base]/PractitionerRole?location.address-state=[state]`
-
-*Example:* 
-
-`GET [base]/PractitionerRole?location.address-postalcode=3101`
-
-`GET [base]/PractitionerRole?location.address-postalcode=3101,3101`
-
-`GET [base]/PractitionerRole?location.address-city=Bundaberg`
-
-`GET [base]/PractitionerRole?location.address-state=VIC`
-
-*Support:*
-
-* MUST support search PractitionerRole by location address parts address-postalcode, address-city, address-state.
-* MUST support basic **param=[string]** search which is case and accent-insensitive search;  field equals or starts with the string value.
-
-*Implementation Notes:* [(how to search by string)]
-
------------
-**Search: Location Distance**
-
-Chained search (via Location) for a location within a nominated distance.
-
-`GET [base]/PractitionerRole?location.near=[latitude]:[longitude]&location.near-distance=[prefix][value]|[units-system]|[units]`
-
-*Example:* `GET [base]/PractitionerRole?location.near=-83.694810:42.256500&location.near-distance=le10.0|http://unitsofmeasure.org|km`
-
-*Support:* 
-
-* SHOULD support search PractitionerRole by location within a distance.
-* SHOULD support:
-[prefix] fixed 'le' is less than or equal to distance
-[value] is a decimal quantity number
-[units-system] fixed 'http://unitsofmeasure.org' identifies standard distance units are used
-[units] distance units must support 'km' or 'm'
-
-*Implementation Notes:* [(how to search by token)] and [(how to search by quantity)]
-
------------
-**Search: Connection Type (Service Interface)**
-
-Chaned search (via Endpoint) based on token for a protocol to be used to connnect to the endpoint.
- 
-`GET [base]/PractitionerRole?endpoint.connection-type=[system]|[code]`
-
-*Example:* `GET [base]/PractitionerRole?endpoint.connection-type=http://hl7.org.au/fhir/CodeSystem/smd-interfaces|http://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010`
-
-*Support:*
-
-* MUST support search by PractitionerRole by endpoint connection type.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-**Search: Payload Type (Service Category)**
-
-Chaned search (via Endpoint) based on token for the type of content supported by the endpoint.
- 
-`GET [base]/PractitionerRole?endpoint.payload-type=[system]|[code]`
-
-*Example:* `GET [base]/PractitionerRole?endpoint.payload-type=http://hl7.org.au/fhir/CodeSystem/smd-interfaces|http://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706`
-
-*Support:*
-
-* MUST support search PractitionerRole by endpoint payload type.
-
-*Implementation Notes:* [(how to search by token)]
-
------------
-**Search: Include References**
-
-The [_include](http://hl7.org/fhir/search.html#include) argument allows the automatic inclusion of referenced resources in the response for a search; based on search parameters defined for this resource type<sup>[1](http://hl7.org/fhir/STU3/practitionerrole.html#search)</sup>.
-
-*Example:* `GET [base]/PractitionerRole?_include=PractitionerRole:practitioner&_include=PractitionerRole:organization&_include=PractitionerRole:endpoint&_include=PractitionerRole:location`
-
-*Support:*
-
-* MUST support _include PractitionerRole references *practitioner* (Practitioner), *location* (Location), *organization* (Organization), *endpoint* (Endpoint), *service* (HealthcareService).
-
------------
-**Search: Combination**
-
-* Searches MUST be able to be perfomed  in a single request using logical AND for criteria. e.g specialty cardiologist in post code 4846
-
------------
-
- [(how to search by reference)]: http://hl7.org/fhir/search.html#reference
- [(how to search by token)]: http://hl7.org/fhir/search.html#token
- [(how to search by date)]: http://hl7.org/fhir/search.html#date
- [(how to search by string)]: http://hl7.org/fhir/search.html#string
- [(how to search by quantity)]: http://hl7.org/fhir/search.html#quantity
- [(how to read resource)]: http://hl7.org/fhir/http.html#read

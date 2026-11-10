@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActorDefinition xmlns="http://hl7.org/fhir">
+  <id value="au-pd-actor-responder"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2"/> 
+  </extension>
+  <url value="http://hl7.org.au/fhir/pd/ActorDefinition/au-pd-actor-responder" />
+  <name value="AUPDResponder"/> 
+  <title value="AU PD Responder"/> 
+  <status value="active"/>
+  <description value="The AU PD Responder is a system responsible for providing responses to queries submitted by AU PD Requesters."/> 
+  <type value="system"/> 
+  <documentation value="An AU PD Responder, also known as AU PD Server:&#xa;&#xa;
+- **SHALL** correctly populate all *Must Support* elements if they know a value for the element.&#xa;&#xa;
+When a *Must Support* element requires additional or stronger obligation, this obligation is specified in the AU PD Responder [obligation extension](https://hl7.org/fhir/extensions/StructureDefinition-obligation.html) on the element definition."/>
+  <capabilities value="http://hl7.org.au/fhir/pd/CapabilityStatement/au-pd-responder"/>
+</ActorDefinition>

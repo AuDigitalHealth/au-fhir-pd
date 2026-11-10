@@ -2,35 +2,38 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Conformance
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="guidance.html">General Guidance</a>
-      </li>  
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
       <li>
-        <a href="variance.html">AU Variance Statement</a>
+        <a href="declaring-conformance.html">Declaring Conformance</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+    <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Guidance
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="profiles.html">Profiles and Extensions</a>
+        <a href="general-guidance.html">General Guidance</a>
       </li>
       <li>
-        <a href="searchparams.html">Search Parameters</a>
+        <a href="sex-and-gender.html">Sex and Gender</a>
+      </li>      
+      <li>
+        <a href="relationship.html">Relationship With Other IGs</a>
       </li>
       <li>
-        <a href="terminology.html">Terminology</a>
+        <a href="variance.html">AU Variance Statement</a>
       </li>
       <li>
-        <a href="capstatements.html">Capability Statements</a>
+        <a href="future.html">Future of AU PD</a>
       </li>
     </ul>
   </li>
@@ -40,11 +43,36 @@
   <li>
     <a href="federation.html">Federation</a>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="actors.html">Actor Definitions</a>
+      </li>
+    </ul>
+  </li>
   <li>
     <a href="examples.html">Examples</a>
   </li>
- <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Support
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">

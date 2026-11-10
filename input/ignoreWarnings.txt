@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 
-# The following code systems are external and not supported by terminology server
+# === WARNING 01: The following code systems are external and not supported by terminology server. ===
 The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/practitioner-role-1 on element PractitionerRole.code could not be resolved
 The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/clinical-specialty-1 on element PractitionerRole.specialty could not be resolved
 The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/common-languages-australia-2 on element Practitioner.communication could not be resolved
@@ -10,27 +10,58 @@ The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/healthca
 Code System URI 'http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0' is unknown so the code cannot be validated
 The value provided ('NSW') could not be validated because the code system null is not known
 
-# NCTS terminologies
+# === WARNING 02: NCTS terminologies. ===
 ValueSet https://healthterminologies.gov.au/fhir/ValueSet/clinical-specialty-1 not found
 ValueSet https://healthterminologies.gov.au/fhir/ValueSet/healthcare-organisation-role-type-1 not found
 Unknown System 'https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1' specified, so Concepts and Filters can't be checked (Details: The CodeSystem https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1 is unknown (from Tx-Server))
 Error from server: Unable to provide support for code system https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1
 
-# HL7 core warnings
+# === WARNING 03: HL7 core warnings. ===
 The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
 An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml] is not included anywhere in the produced implementation guide
 The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 
-# slice warnings / information
+# === WARNING 04: slice warnings / information. ===
 This element does not match any known slice defined in the profile http://hl7.org.au/fhir/pd/StructureDefinition/au-pd-sm-endpoint|2.1.0
 This element does not match any known slice defined in the profile http://hl7.org.au/fhir/pd/StructureDefinition/au-pd-practitioner|2.1.0
 
-# slice matching
+# === WARNING 05: slice matching. ===
 Found multiple matching profiles among 2 choices: http://hl7.org.au/fhir/StructureDefinition/au-hpio, http://hl7.org/fhir/StructureDefinition/Identifier
 Found multiple matching profiles among 2 choices: http://hl7.org.au/fhir/StructureDefinition/au-hpii, http://hl7.org/fhir/StructureDefinition/Identifier
 Found multiple matching profiles among 2 choices: http://hl7.org.au/fhir/StructureDefinition/au-pbsprescribernumber, http://hl7.org/fhir/StructureDefinition/Identifier
 
-# preferred binding information
+# === WARNING 06: preferred binding information. ===
 None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set) (codes = http://snomed.info/sct#17561000)
 None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set) (codes = http://snomed.info/sct#310000008)
+
+# === WARNING 07: The canonical URL for following identifier types currently resolves to a html page and not a FHIR artefact. See the list of AU Base identifier profiles for the corresponding data type profile. ===
+Found multiple matching profiles among 2 choices: http://hl7.org.au/fhir/StructureDefinition/au-locationspecificpracticenumber, http://hl7.org/fhir/StructureDefinition/Identifier
+No definition could be found for URL value 'http://ns.electronichealth.net.au/id/location-specific-practice-number'
+No definition could be found for URL value 'http://ns.electronichealth.net.au/id/hi/hpio/1.0'
+No definition could be found for URL value 'http://ns.electronichealth.net.au/id/medicare-prescriber-number'
+No definition could be found for URL value 'http://ns.electronichealth.net.au/id/medicare-provider-number'
+No definition could be found for URL value 'https://sqlonfhir-aupd.azurewebsites.net/fhir/PractitionerRole?active=true&identifier=http://ns.electronichealth.net.au/id/medicare-provider-number%7C2426621B&endpoint.payload-type=http://hl7.org.au/fhir/CodeSystem/codesystem-au-endpoint-payload-type%7Chttp://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706&_include=PractitionerRole:endpoint&_include=PractitionerRole:location&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_snapshot=636722390250714988'
+No definition could be found for URL value 'http://ns.electronichealth.net.au/id/hi/hpii/1.0'
+No definition could be found for URL value 'http://ns.electronichealth.net.au/id/prescriber-number'
+No definition could be found for URL value 'https://sqlonfhir-aupd.azurewebsites.net/fhir/HealthcareService?active=true&name=Downunder&endpoint.payload-type=http://hl7.org.au/fhir/CodeSystem/codesystem-au-endpoint-payload-type%7Chttp://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706&_include=HealthcareService:endpoint&_include=HealthcareService:location&_include=HealthcareService:organization&_snapshot=636722396729219835&_page=0'
+No definition could be found for URL value 'http://sqlonfhir-aupd.azurewebsites.net/fhir/Endpoint?status=active&identifier=http://ns.electronichealth.net.au/smd/target%7Chttp://ns.argusdca.com.au/smd/id/hostname/ACC5408570000002&connection-type=http://hl7.org.au/fhir/pd/CodeSystem/smd-interfaces%7Chttp://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010&payload-type=http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type%7Chttp://ns.electronichealth.net.au/ack/sc/deliver/hl7Ack/2012&_snapshot=636722458358170195'
+Found multiple matching profiles among 2 choices: http://hl7.org.au/fhir/StructureDefinition/au-medicareprovidernumber, http://hl7.org/fhir/StructureDefinition/Identifier
+No definition could be found for URL value 'https://sqlonfhir-aupd.azurewebsites.net/fhir/PractitionerRole?active=true&identifier=http://ns.electronichealth.net.au/id/medicare-provider-number%7C2426621B&endpoint.payload-type=http://hl7.org.au/fhir/CodeSystem/codesystem-au-endpoint-payload-type%7Chttp://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706&_include=PractitionerRole:endpoint&_include=PractitionerRole:location&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_snapshot=636722390250714988&_page=0'
+
+# === WARNING 08: The IG Publisher cannot match identifiers to a single profile and generates these warnings. This behaviour is expected and consistent with the design of AU Core. ===
+No definition could be found for URL value 'http://ns.electronichealth.net.au/smd/target'
+No definition could be found for URL value 'http://ns.medical-objects.com.au/id/routing-id'
+
+# === WARNING 09: Informational only - these resources could optionally have an OID assigned for interoperability with OID-based terminology systems (e.g. CDA/HL7v2), but a canonical URL is sufficient for FHIR use. ===
+The resource CodeSystem/smd-interfaces should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+The resource ValueSet/au-physical-states-territories should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+The resource ValueSet/endpoint-payload-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+The resource ValueSet/service-interfaces should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+The resource CodeSystem/endpoint-payload-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+# === WARNING 10: Example search response Bundle references a live demo server query URL that is not a resolvable FHIR canonical/definition. ===
+No definition could be found for URL value 'https://sqlonfhir-aupd.azurewebsites.net/fhir/HealthcareService?active=true&name=Downunder&endpoint.payload-type=http://hl7.org.au/fhir/CodeSystem/codesystem-au-endpoint-payload-type%7Chttp://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706&_include=HealthcareService:endpoint&_include=HealthcareService:location&_include=HealthcareService:organization&_snapshot=636722396729219835'
+
+# === WARNING 11: Fixed typo in CodeSystem/smd-interfaces valueSet reference (was http://hl7.org.au.fhir/..., corrected to http://hl7.org.au/fhir/pd/ValueSet/service-interfaces); kept here until the CI build output no longer emits it. ===
+A definition could not be found for Canonical URL 'http://hl7.org.au.fhir/ValueSet/valueset-au-serviceinterface'

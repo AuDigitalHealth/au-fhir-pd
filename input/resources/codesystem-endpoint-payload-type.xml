@@ -3,14 +3,14 @@
 	<meta>
 		<profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem" />
 	</meta>
-	<url value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type"/>
+	<url value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type"/>
 	<name value="AustralianEndpointPayloadTypes"/>
 	<title value="Australian Endpoint Payload Types"/>
 	<status value="draft"/>
 	<experimental value="true"/>
 	<description value="The Endpoint Payload Types code system defines concepts that identify well known endpoint payload types."/>
 	<caseSensitive value="true"/>
-	<valueSet value="http://hl7.org.au.fhir/ValueSet/valueset-au-endpoint-payload-type"/>
+	<valueSet value="http://hl7.org.au/fhir/pd/ValueSet/endpoint-payload-type"/>
 	<compositional value="false"/>
 	<versionNeeded value="true"/>
 	<content value="complete"/>

@@ -7,7 +7,7 @@
     <total value="1" />
     <link>
         <relation value="self" />
-        <url value="http://sqlonfhir-aupd.azurewebsites.net/fhir/Endpoint?status=active&amp;identifier=http://ns.electronichealth.net.au/smd/target%7Chttp://ns.argusdca.com.au/smd/id/hostname/ACC5408570000002&amp;connection-type=http://hl7.org.au/fhir/CodeSystem/smd-interfaces%7Chttp://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010&amp;payload-type=http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type%7Chttp://ns.electronichealth.net.au/ack/sc/deliver/hl7Ack/2012&amp;_snapshot=636722458358170195" />
+        <url value="http://sqlonfhir-aupd.azurewebsites.net/fhir/Endpoint?status=active&amp;identifier=http://ns.electronichealth.net.au/smd/target%7Chttp://ns.argusdca.com.au/smd/id/hostname/ACC5408570000002&amp;connection-type=http://hl7.org.au/fhir/pd/CodeSystem/smd-interfaces%7Chttp://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010&amp;payload-type=http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type%7Chttp://ns.electronichealth.net.au/ack/sc/deliver/hl7Ack/2012&amp;_snapshot=636722458358170195" />
     </link>
     <entry>
         <fullUrl value="http://sqlonfhir-aupd.azurewebsites.net/fhir/Endpoint/18d7c074e0cd4adaac2776693fb6595e" />
@@ -61,7 +61,7 @@
                 </identifier>
                 <status value="active" />
                 <connectionType>
-                    <system value="http://hl7.org.au/fhir/CodeSystem/smd-interfaces" />
+                    <system value="http://hl7.org.au/fhir/pd/CodeSystem/smd-interfaces" />
                     <code value="http://ns.electronichealth.net.au/smd/intf/SealedMessageDelivery/TLS/2010" />
                 </connectionType>
                 <name value="Telstra Health Secure Messaging Endpoint" />
@@ -78,35 +78,35 @@
                 </period>
                 <payloadType>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.electronichealth.net.au/er/sc/deliver/hl7Mdm/2012" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.electronichealth.net.au/ds/sc/deliver/hl7Mdm/2012" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.electronichealth.net.au/sl/sc/deliver/hl7Mdm/2012" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.electronichealth.net.au/es/sc/deliver/hl7Mdm/2012" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.electronichealth.net.au/shs/sc/deliver/hl7Mdm/2012" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.hl7.org.au/hl7v2/profiles/HL7AU-OO-REF-SIMPLIFIED-201706/RRI" />
                     </coding>
                     <coding>
-                        <system value="http://hl7.org.au/fhir/CodeSystem/endpoint-payload-type" />
+                        <system value="http://hl7.org.au/fhir/pd/CodeSystem/endpoint-payload-type" />
                         <code value="http://ns.electronichealth.net.au/ack/sc/deliver/hl7Ack/2012" />
                     </coding>
                 </payloadType>
