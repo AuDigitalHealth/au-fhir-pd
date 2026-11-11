@@ -42,8 +42,7 @@
                             <b>providedBy</b>:
                             <a href="Organization-example0.html">Generated Summary: id: example0; HPI-O = 8003627500000328; active; 
                     
-                                <span title="Codes: {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8401}">Hospitals (Except Psychiatric Hospitals)</span>,
-                                <span title="Codes: {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8401-15}">Public acute care Hospital</span>; name: Downunder Hospital; helen.mayo@downunderhospital.com.au(WORK)
+                                <span title="Codes: {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8401}">Hospitals (Except Psychiatric Hospitals)</span>; name: Downunder Hospital; helen.mayo@downunderhospital.com.au(WORK)
                             </a>
                         </p>
                         <p>
@@ -271,8 +270,7 @@
                         </p>
                         <p>
                             <b>type</b>: Hospitals (Except Psychiatric Hospitals)
-                            <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401' = 'Hospitals (Except Psychiatric Hospitals)', given as 'Hospitals (Except Psychiatric Hospitals)'})</span>, Public acute care Hospital
-                            <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401-15' = 'Public acute care Hospital', given as 'Public acute care Hospital'})</span>
+                            <span style="background: LightGoldenRodYellow">(Details : {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 code '8401' = 'Hospitals (Except Psychiatric Hospitals)', given as 'Hospitals (Except Psychiatric Hospitals)'})</span>
                         </p>
                         <p>
                             <b>name</b>: Downunder Hospital
@@ -303,13 +301,6 @@
                         <system value="http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0" />
                         <code value="8401" />
                         <display value="Hospitals (Except Psychiatric Hospitals)" />
-                    </coding>
-                </type>
-                <type>
-                    <coding>
-                        <system value="http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0" />
-                        <code value="8401-15" />
-                        <display value="Public acute care Hospital" />
                     </coding>
                 </type>
                 <name value="Downunder Hospital" />
